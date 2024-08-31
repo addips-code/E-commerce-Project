@@ -6,20 +6,25 @@ import Header from "@/components/Header";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Adeola E-commerce store",
-  description: "A webstore for every item you need",
+  title: "Adeola E-commerce",
+  description: "Experience the power of Nextjs 14",
 };
 
 export default function RootLayout({
+  modal,
   children,
 }: Readonly<{
   children: React.ReactNode;
+  modal: React.ReactNode;
 }>) {
   return (
     <html lang="en">
       <body className={inter.className}>
-        <Header/>
-        {children}
+        <Header />
+        <div className="flex">
+          {modal}
+          {children}
+        </div>
       </body>
     </html>
   );
